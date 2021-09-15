@@ -4,7 +4,7 @@ h1{
     text-shadow: 2px 2px 5px blue;
   }
   
-  .play-again {
+  /* .play-again {
     height: 0px;
     overflow: hidden;
   }
@@ -29,7 +29,7 @@ h1{
   }
   .play-again:hover {
     opacity: 1;
-  }
+  } */
   
   .gameboard {
     background-color: #00008B;
@@ -50,7 +50,7 @@ h1{
     width: 75px;
     margin: 10px;
     text-align: center;
-    color: white;
+    color: black;
     padding: 2px;
   }
   
