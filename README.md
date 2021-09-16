@@ -13,6 +13,7 @@ Example Images:
 Game rules:
   - Player must connect 4 of their colored blocks in a row
   - Player can only play 1 block during their turn. Switch turns after 1 block is placed.
+  - Blocks must only be placed on an empty bottom block, or on top of a taken block. You may not place a block on a taken block.
   - Game also ends if there is a tie/stalemate with no determined winner. 
 
 Play the game!: [Try the game!](https://spark0517.github.io/project-one/)
