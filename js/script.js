@@ -6,6 +6,7 @@ let player;
 let totalTurns = 0;
 const gameboardEl = document.querySelector(".gameboard");
 const piece = document.getElementsByClassName("piece");
+let winner = false;
 
 
 // Messages
@@ -110,17 +111,22 @@ const winArray = [
 // Event Listeners
 playAgainBtnEl.addEventListener('click', () => location.reload());
 
-gameboardEl.addEventListener("click", function(e){
-  changeColor(e)
-})
-
 // Functions
 function init (){
+  gameboardEl.addEventListener("click", function(e){
+    changeColor(e)
+  })
   render()
 }
 
 function render (){
   console.log(gameboard)
+  for (let i = 0; i < gameboard.length; i++){
+    for (let j = 0; j < gameboard[i].length; j++){
+      let idx = (7 * i) + j
+      document.getElementById(idx).style.backgroundColor = gameboard[i][j]
+    }
+  }
 }
 
 function checkPlayerTurn(){
@@ -140,6 +146,7 @@ function checkWin(){
         if (a == b && b == c && c == d){
           results.innerHTML = `${totalTurns % 2 ? "Yellow" : "Red"} wins!`
           document.getElementById("play-again").style.display = "block"
+          winner = true
         }
       }
     }
@@ -149,53 +156,43 @@ function checkWin(){
   //Get tiles to change colors
 function changeColor(e){
 
+  if (winner){
+    return
+  }
   let idx = e.target.id
   let x = Math.floor(idx / 7)
   let y = idx % 7
   let square = gameboard[x][y]
   
   if (square) return
-  while (x < 41){
-    console.log("hitting while loop")
-    x += 7
-    // if (gameboard[x][y] != 0){
-    //   break
+  while (x < 5){
 
-    // } 
+    x += 1
+    if (gameboard[x][y] != 0){+
+      x--
+      break
+
+    } 
     console.log(gameboard[x][y])
-    console.log("bottom of while loop")
+
   }
-  console.log (x)
 
-  /* 
-  if you click on a square and it is not empty, exit function(return statement)
-  if the square is empty, check square below 
-  continue checking until you find a square that is not empty
-  once you find the furthest empty square, place the piece on that square
-
-  in order to check squares below in a column, use math 
-    each idx/value is +7 from previous 
-  
-
-
-
-
-
-  */
-  if (e.target.tagName === "DIV" && player ){
-    e.target.style.backgroundColor = "red";
+  if (e.target.tagName === "DIV" && player ){  
+    //e.target.style.backgroundColor = "red";
     gameboard[x][y] = "red"
     totalTurns++
+    render()
   } 
   else if (e.target.tagName === "DIV" && !player ){
-    e.target.style.backgroundColor = "yellow";
+    //e.target.style.backgroundColor = "yellow";
     gameboard[x][y] = "yellow"
     totalTurns++
+    render()
   }
   checkWin()
   checkPlayerTurn()
-  render()
+  
 }
 
-
+init()
 
