@@ -10,7 +10,10 @@ Example Images:
   - Win Example: 
   <img src="https://i.imgur.com/WpjJ6XV.png">
 
-Game rules: Two players will place one block at a time to connect 4 blocks together in order to determine the winner. Blocks must be placed above other existing blocks unless they are placed at the very bottom. Blocks can not be placed where another player has already placed their block. 
+Game rules:
+  - Player must connect 4 of their colored blocks in a row
+  - Player can only play 1 block during their turn. Switch turns after 1 block is placed.
+  - Game also ends if there is a tie/stalemate with no determined winner. 
 
 Play the game!: [Try the game!](https://spark0517.github.io/project-one/)
 
