@@ -8,7 +8,7 @@ Example Images:
   <img src="https://i.imgur.com/KVk5ZMK.png">
   
   - Win Example: 
-  <img src="https://i.imgur.com/WpjJ6XV.png">
+  <img src="https://i.imgur.com/qQF127p.png">
 
 Game rules:
   - Player must connect 4 of their colored blocks in a row
