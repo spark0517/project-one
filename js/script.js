@@ -1,6 +1,4 @@
 // Variables
-let pl1El = document.querySelector("#pl1");
-let pl2El = document.querySelector("#pl2");
 let playAgainEl = document.querySelector("#play-again");
 let playAgainBtnEl = document.querySelector("#play-again-btn");
 let game = {};
@@ -30,12 +28,7 @@ let gameboard = [
   [0, 0, 0, 0, 0, 0, 0],  // Row 4
   [0, 0, 0, 0, 0, 0, 0],  // Row 5
 
-  // [null, null, null, null, null, null, null],
-  // [null, null, null, null, null, null, null],
-  // [null, null, null, null, null, null, null],
-  // [null, null, null, null, null, null, null],
-  // [null, null, null, null, null, null, null],
-  // [null, null, null, null, null, null, null],
+
   ];
 
 // Winning Arrays
@@ -134,9 +127,26 @@ function checkPlayerTurn(){
   return player = totalTurns % 2
 }
 
+//Check for winner
+function checkWin(){
+  for (let i = 0; i < winArray.length; i++){
+    for (let j = 0; j < 1; j++){
+      if (document.getElementById(`${winArray[i][j]}`).style.backgroundColor != ''){
+        let a = document.getElementById(`${winArray[i][j]}`).style.backgroundColor
+        let b = document.getElementById(`${winArray[i][j + 1]}`).style.backgroundColor
+        let c = document.getElementById(`${winArray[i][j + 2]}`).style.backgroundColor
+        let d = document.getElementById(`${winArray[i][j + 3]}`).style.backgroundColor
+
+        if (a == b && b == c && c == d){
+          results.innerHTML = 'Player wins'
+        }
+      }
+    }
+  }
+}
+
+  //Get tiles to change colors
 function changeColor(e){
-  //console.log(e.target, "check for divs")
-  //console.log(e.target.tagName)
 
   let idx = e.target.id
   let x = Math.floor(idx / 7)
@@ -152,7 +162,7 @@ function changeColor(e){
     gameboard[x][y] = "yellow"
     totalTurns++
   }
-  //checkWin()
+  checkWin()
   checkPlayerTurn()
   render()
 }
@@ -168,13 +178,4 @@ function changeColor(e){
 
 */
 
-
-//Check for winner
-
-function checkWin(){
-  
-  
-  
-  console.log(piece)
-}
 
