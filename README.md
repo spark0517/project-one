@@ -12,7 +12,7 @@ Example Images:
 
 Game rules: Two players will place one block at a time to connect 4 blocks together in order to determine the winner. Blocks must be placed above other existing blocks unless they are placed at the very bottom. Blocks can not be placed where another player has already placed their block. 
 
-Play the game!: https://spark0517.github.io/project-one/
+Play the game!: [Try the game!](https://spark0517.github.io/project-one/)
 
 Potential Updates: 
   - Make alraedy taken blocks unclickable
