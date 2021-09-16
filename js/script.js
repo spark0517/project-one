@@ -138,7 +138,8 @@ function checkWin(){
         let d = document.getElementById(`${winArray[i][j + 3]}`).style.backgroundColor
 
         if (a == b && b == c && c == d){
-          results.innerHTML = 'Player wins'
+          results.innerHTML = `${totalTurns % 2 ? "Yellow" : "Red"} wins!`
+          document.getElementById("play-again").style.display = "block"
         }
       }
     }
@@ -151,7 +152,36 @@ function changeColor(e){
   let idx = e.target.id
   let x = Math.floor(idx / 7)
   let y = idx % 7
+  let square = gameboard[x][y]
+  
+  if (square) return
+  while (x < 41){
+    console.log("hitting while loop")
+    x += 7
+    // if (gameboard[x][y] != 0){
+    //   break
 
+    // } 
+    console.log(gameboard[x][y])
+    console.log("bottom of while loop")
+  }
+  console.log (x)
+
+  /* 
+  if you click on a square and it is not empty, exit function(return statement)
+  if the square is empty, check square below 
+  continue checking until you find a square that is not empty
+  once you find the furthest empty square, place the piece on that square
+
+  in order to check squares below in a column, use math 
+    each idx/value is +7 from previous 
+  
+
+
+
+
+
+  */
   if (e.target.tagName === "DIV" && player ){
     e.target.style.backgroundColor = "red";
     gameboard[x][y] = "red"
@@ -166,16 +196,6 @@ function changeColor(e){
   checkPlayerTurn()
   render()
 }
-//Make condition so colored circle can not change colors.
 
-// Game piece falls to bottom
-/*
-- Check circle underneath to see if white or colored.
-  - if white, check circle below that
-  - if colored, stay
-  - repeat until bottom. if bottom, stay.
-
-
-*/
 
 

@@ -5,12 +5,12 @@ h1 {
   }
   
   .play-again {
-    height: 0px;
-    overflow: hidden;
+    display: none;
   }
   .play-again.show {
     height: 40px;
     transition: 0.75s;
+    text-align: center;
   }
   
   .play-again-btn {
@@ -22,6 +22,8 @@ h1 {
     color: white;
     text-decoration: none;
     opacity: 0.9;
+    text-align: center;
+  
   }
   .play-again-btn:hover,
   .play-again-btn:focus {
