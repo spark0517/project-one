@@ -16,6 +16,8 @@ Game rules:
   - Blocks must only be placed on an empty bottom block, or on top of a taken block. You may not place a block on a taken block.
   - Game also ends if there is a tie/stalemate with no determined winner. 
 
+Technologies used: HTML, CSS, Javascript
+
 Play the game!: [Try the game!](https://spark0517.github.io/project-one/)
 
 Potential Updates: 
