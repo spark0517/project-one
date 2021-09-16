@@ -2,7 +2,7 @@
 
 Game: Connect Four
 
-Example Images: https://imgur.com/a/5bdm2Jj
+Example Images: ![alt text](https://imgur.com/a/5bdm2Jj)
 <blockquote class="imgur-embed-pub" lang="en" data-id="a/5bdm2Jj"  ><a href="//imgur.com/a/5bdm2Jj">Connect Four Outline</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 Technologies Used: HTML, CSS, Javascript
